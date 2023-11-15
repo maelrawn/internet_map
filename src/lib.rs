@@ -53,7 +53,7 @@ pub mod imap {
     pub async fn complete_job(block: u16, db_path: String) -> Vec<(u16, bool)> {
         println!("awaiting pings on block {:?}", block);
         let db = sqlite::open(db_path).unwrap();
-        let block_res = tokio::spawn(ping_block(block)).await.unwrap()
+        tokio::spawn(ping_block(block)).await.unwrap()
     }
 
     pub fn write_results(
