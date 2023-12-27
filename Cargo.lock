@@ -1169,8 +1169,10 @@ name = "internet_map"
 version = "0.1.0"
 dependencies = [
  "futures",
+ "futures-executor",
  "ggez",
  "hsv",
+ "png",
  "rand",
  "sqlite",
  "surge-ping",
